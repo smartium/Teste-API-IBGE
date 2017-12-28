@@ -12,7 +12,7 @@ body {
   background-color: rgb(60, 63, 70);
   color: orange;
   font-family: 'Duospace';
-  text-align: center;
+  /* text-align: center; */
 }
 
 header {

@@ -28,7 +28,25 @@ Meteor.methods({
       };
     });
 
+    Meteor.call('insertSearchLog', retName.name, retNumber);
+
     return retName;
 
+  },
+
+  insertSearchLog(name, number) {
+    SearchLog.insert({
+      name: name,
+      number: number,
+      timestamp: new Date()
+    });
+  },
+
+  getSearchsTotal() {
+    return SearchLog.find().count();
   }
+});
+
+Meteor.publish('searchLogPublication', ()=> {
+  return SearchLog.find();
 });

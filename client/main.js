@@ -33,3 +33,27 @@ Template.body.events({
     e.target.name.value = '';
   }
 });
+
+Template.stats.onCreated(function statsOnCreated() {
+  Meteor.subscribe('searchLogPublication');
+});
+
+Template.stats.helpers({
+  totalSearchs() {
+    return SearchLog.find().count();
+  },
+
+  searchLogs() {
+    var searchResult = [];
+    var searchs = SearchLog.find().fetch();
+    var groupedNames = _.groupBy(_.pluck(searchs, 'name'));
+    _.each(_.values(groupedNames), function(names) {
+      searchResult.push({
+        name: names[0],
+        total: names.length
+      });
+    });
+    console.log(searchResult);
+    return searchResult;
+  }
+});
