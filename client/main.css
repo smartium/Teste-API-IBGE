@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Duospace';
+  src: url('iAWriterDuospace-Regular.otf');
+}
+
+@font-face {
+  font-family: 'smrtmFont';
+  src: url('Arial Rounded MT Light.ttf');
+}
+
+body {
+  background-color: rgb(60, 63, 70);
+  color: orange;
+  font-family: 'Duospace';
+  text-align: center;
+}
+
+header {
+  color: rgb(189, 189, 174);
+  font-family: 'smrtmFont';
+  font-size: 2em;
+  margin: 20px;
+}
+
+header img {
+  width: .9em;
+}
+
+input {
+  width: 55%;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-size: 2em;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+a {
+  color: orange;
+}
+
+h5 a {
+  color: grey;
+}
+
+.number {
+  font-size: 8em;
+  color: yellow;
+}

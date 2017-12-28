@@ -1,0 +1,30 @@
+<head>
+  <title>SMARTIUM - IBGE - CENSO</title>
+</head>
+
+<body>
+  <header>
+    <img src="smrtm_logo.png" alt="" /> SMARTIUM
+  </header>
+  <h1>Exercício de integração com a API do <a href="https://www.ibge.gov.br/" target="_blank">IBGE</a></h1>
+
+    {{#if chosenName.name}}
+    <h1>Olá {{ chosenName.name }}!</h1>
+    {{else}}
+    <!-- <h1>não há resultados, você é exclusivo!</h1> -->
+    {{/if}}
+
+    {{#if chosenName.number}}
+    <h2>Quantidade de {{ chosenName.name }}s, segundo o último <a href="https://pt.wikipedia.org/wiki/Censo_demogr%C3%A1fico" target="_blank">censo</a> é de:</h2>
+    <div class="number">{{formatNumber chosenName.number }}</div>
+    <h2>Entre 1930 e 2010</h2>
+    {{/if}}
+
+    <form>
+      <input type="text" id="name" placeholder="digite seu nome e tecle <enter>">
+    </form>
+
+    {{#if chosenName.name}}
+    <h5><a href="http://servicodados.ibge.gov.br/api/v2/censos/nomes/{{lowerCase chosenName.name }}" target="_blank">http://servicodados.ibge.gov.br/api/v2/censos/nomes/{{lowerCase chosenName.name }}</a></h5>
+    {{/if}}
+  </body>
